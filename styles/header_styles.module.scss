@@ -1,0 +1,26 @@
+.header {
+  position: relative;
+  padding: 4%;
+  display: flex;
+  justify-content: space-between;
+  background-color: aqua;
+}
+
+.headerL {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border: 2px solid black;
+  border-radius: 2%;
+
+}
+
+.headerImg {
+  width: 50%;
+  border-radius: 2%;
+}
+
+.headerR {
+  // position: absolute;
+}
+
