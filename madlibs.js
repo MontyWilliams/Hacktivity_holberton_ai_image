@@ -132,29 +132,12 @@ const madLibsArray =
     ["Let us find that __ __ once again, ", 2, "ADJECTIVE", "NOUN"],
     ["or else I'm taking my __ off the __!", 2, "PART OF THE BODY", "NOUN"]
   ]
-  // let madLibSet = new Set(madLibsArray)  
-  //  let madLibLibrary = Object.assign({}, madLibsArray)
-  
+
   let madLibLibrary = []
   
-//   for (const [key, value] of madLibsArray) {
-    
-//       madLibLibrary.set({key, value})
-//      }
-// console.log(madLibLibrary)
-
-// for (lib in madLibsArray ) {
-//   console.log("###############")
-//   for (attribute in madLibsArray[lib]) {
-    
-//     console.log(madLibsArray[lib][attribute].shift())
-//     console.log("-----")
-//   }
-// }
 let LiBy = new Set();
 
 madLibsArray.forEach(madLib => {
-  // console.log(madLib)
   LiBy.add({
     "description": madLib[0],
     "numOfLibs": madLib[1]
@@ -171,5 +154,4 @@ madLibsArray.forEach(madLib => {
   madLibLibrary.push(LiBy)
 });
 
-// console.log(madLibLibrary)
 export { madLibLibrary }
