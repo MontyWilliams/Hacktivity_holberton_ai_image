@@ -151,9 +151,10 @@ for (let i = 0; i < madLibsArray.length; i++) {
     }
   }
   madLibLibrary.push({
-    LiBy
-     
+    LiBy   
    })
+   console.log(LiBy)
 }
 
-export { madLibLibrary }
+
+// export { madLibLibrary }
