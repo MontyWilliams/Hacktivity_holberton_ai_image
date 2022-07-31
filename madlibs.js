@@ -128,33 +128,48 @@ const madLibsArray =
       "NOUN",
       "PAST TENSE VERB"
     ],
-    ["__ was able to __ in harmony.'", 2, "PRssssOPER NOUN", "VERB"],
+    ["__ was able to __ in harmony.'", 2, "PROPER NOUN", "VERB"],
     ["Let us find that __ __ once again, ", 2, "ADJECTIVE", "NOUN"],
     ["or else I'm taking my __ off the __!", 2, "PART OF THE BODY", "NOUN"]
   ]
+  // let madLibSet = new Set(madLibsArray)  
+  //  let madLibLibrary = Object.assign({}, madLibsArray)
   
   let madLibLibrary = []
+  
+//   for (const [key, value] of madLibsArray) {
+    
+//       madLibLibrary.set({key, value})
+//      }
+// console.log(madLibLibrary)
 
-for (let i = 0; i < madLibsArray.length; i++) {
- 
-  let LiBy = {
-    "madLib": {
-      "desc": madLibsArray[i][0],
-      "numOfLibs": madLibsArray[i][1],
-    },
-    "LibType": {
-      "2": madLibsArray[i][2],
-      "3": madLibsArray[i][3],
-      "4": madLibsArray[i][4],
-      "3": madLibsArray[i][5]
+// for (lib in madLibsArray ) {
+//   console.log("###############")
+//   for (attribute in madLibsArray[lib]) {
+    
+//     console.log(madLibsArray[lib][attribute].shift())
+//     console.log("-----")
+//   }
+// }
+let LiBy = new Set();
 
-    }
-  }
-  madLibLibrary.push({
-    LiBy   
-   })
-   console.log(LiBy)
-}
+madLibsArray.forEach(madLib => {
+  // console.log(madLib)
+  LiBy.add({
+    "description": madLib[0],
+    "numOfLibs": madLib[1]
+  })
+  
+  madLib.shift();
+  madLib.shift();
+  madLib.forEach(attribute => {
+    LiBy.add({
+      "madLibs": attribute
+    })
+    
+  })
+  madLibLibrary.push(LiBy)
+});
 
-
-// export { madLibLibrary }
+// console.log(madLibLibrary)
+export { madLibLibrary }
