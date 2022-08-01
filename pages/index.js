@@ -4,8 +4,9 @@ import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import { madLibLibrary , LiBy } from '../madlibs'
 
-export default function Home({madLibLibHommie}) { 
-console.log(madLibLibHommie)
+export default function Home({madLibList}) { 
+// console.log(madLibLibrary)
+// console.log(LiBy)
   return (
     <div className={styles.container}>
       <Head>
@@ -14,26 +15,27 @@ console.log(madLibLibHommie)
         <link rel="icon" href="/favicon.ico" />
       </Head>
      <div>
-      {madLibLibHommie.map((e) => {
+      {/* {madLibLibHommie.map((e) => {
         return (
           <div>
-             <h2>{"MadLib # " +`${madLibLibHommie.indexOf(e)}`}</h2>
+             <h2>{"MadLib # " +`${madLibList.indexOf(e)}`}</h2>
               <p>{"This one has " +`${e.value[1]}` + " madLibs to add!"}</p>
               <p>{"They are" + " " + `${e.value[2] + " " + e.value[3] + " " + e.value[4] + " " + e.value[5]}`}</p>
               
           </div>
         )
-      })}
+      })} */}
      </div>
     </div>
   )
 }
 
 export const getStaticProps = () => {
-  const madLibLibHommie = madLibLibrary
+  const madLibList = JSON.stringify(madLibLibrary)
+  console.log(madLibList)
   return {
     props: {
-      madLibLibHommie
+      madLibList,
     }
   }
 }

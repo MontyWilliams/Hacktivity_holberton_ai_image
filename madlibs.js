@@ -133,7 +133,7 @@ const madLibsArray =
     ["or else I'm taking my __ off the __!", 2, "PART OF THE BODY", "NOUN"]
   ]
 
-  let madLibLibrary = []
+let madLibLibrary = new Map();
   
 let LiBy = new Set();
 
@@ -142,7 +142,9 @@ madLibsArray.forEach(madLib => {
     "description": madLib[0],
     "numOfLibs": madLib[1]
   })
-  
+  // Here .shift() is used to delete the first 2 values in the array so we can map the rest
+  // tried using a while statement but I believe that the nature of a mapping dosnt work well
+  //with indexes
   madLib.shift();
   madLib.shift();
   madLib.forEach(attribute => {
@@ -151,7 +153,8 @@ madLibsArray.forEach(madLib => {
     })
     
   })
-  madLibLibrary.push(LiBy)
+  madLibLibrary.set(LiBy)
 });
+console.log(madLibLibrary)
 
-export { madLibLibrary }
+// export { madLibsArray }
