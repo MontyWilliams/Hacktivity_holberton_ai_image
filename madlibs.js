@@ -134,27 +134,28 @@ const madLibsArray =
   ]
 
 let madLibLibrary = new Map();
-  
-let LiBy = new Set();
 
-madLibsArray.forEach(madLib => {
-  LiBy.add({
-    "description": madLib[0],
-    "numOfLibs": madLib[1]
-  })
+
+madLibsArray.forEach((madLib, index) => {
+
+  const LiBy = {
+    index: index,
+    description: `${madLib[0]}`,
+  }
+
+
+
   // Here .shift() is used to delete the first 2 values in the array so we can map the rest
-  // tried using a while statement but I believe that the nature of a mapping dosnt work well
-  //with indexes
+  madLib.shift();                 
   madLib.shift();
-  madLib.shift();
-  madLib.forEach(attribute => {
-    LiBy.add({
-      "madLibs": attribute
-    })
-    
-  })
-  madLibLibrary.set(LiBy)
-});
-console.log(madLibLibrary)
 
+  madLib.forEach(attribute => {
+    madLibLibrary.set({}, attribute) 
+
+  })
+  console.log(LiBy)
+});
+
+
+// console.log("--------------------------")
 // export { madLibsArray }
