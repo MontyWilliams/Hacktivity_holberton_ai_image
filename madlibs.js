@@ -134,28 +134,24 @@ const madLibsArray =
   ]
 
 let madLibLibrary = new Map();
-
-
 madLibsArray.forEach((madLib, index) => {
-
   const LiBy = {
-    index: index,
-    description: `${madLib[0]}`,
+      index: index,
+      description: `${madLib[0]}`,
+      adlibs: `${madLib[1]}`  
   }
-
-
 
   // Here .shift() is used to delete the first 2 values in the array so we can map the rest
   madLib.shift();                 
   madLib.shift();
 
-  madLib.forEach(attribute => {
-    madLibLibrary.set({}, attribute) 
-
+  madLib.forEach((attribute, index, fullArray) => {
+    // the spread operator is used with the set which takes the full array (set used to negate duplicates)
+    let holder = [...new Set(fullArray) ]
+holder.forEach((adlib, index, fullArray) => {
+    LiBy.words = fullArray
+    })
   })
-  console.log(LiBy)
+  // console.log(LiBy);
 });
-
-
-// console.log("--------------------------")
-// export { madLibsArray }
+export { mad }
