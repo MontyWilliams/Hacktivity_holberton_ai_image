@@ -3,10 +3,11 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import Cards from '../components/Cards'
-import {  mad } from '../mad'
 
-export default function Home({}) { 
-console.log(mad)
+import path from 'path'
+
+export default function Home() { 
+
 
   return (
     <div className={styles.container}>
@@ -31,4 +32,3 @@ console.log(mad)
 //     }
 //   }
 // }
-
