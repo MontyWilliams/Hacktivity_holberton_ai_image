@@ -18,3 +18,4 @@ font-weight: bold;
  font-family: "GoldmanBold";
 }
 ```
+ actually ended uo just importing it in the head tag

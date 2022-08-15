@@ -1,4 +1,11 @@
+@font-face {
+  font-family: "Monoton";   /*Can be any text*/
+  src: local("Monoton-Regular"),
+    url("/fonts/Monoton/Monoton-Regular.ttf") format("truetype");
+}
+
 .header {
+  font-family: Monoton;
   position: relative;
   padding: 4%;
   display: flex;

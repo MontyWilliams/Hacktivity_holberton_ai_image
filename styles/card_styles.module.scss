@@ -1,8 +1,26 @@
+@font-face {
+  font-family: "HanaleiFill";   /*Can be any text*/
+  src: local("HanaleiFill-Regular"),
+    url("/fonts/Hanalei_Fill/HanaleiFill-Regular.ttf") format("truetype");
+}
+
+
+@font-face {
+  font-family: "Monoton";   /*Can be any text*/
+  src: local("Monoton-Regular"),
+    url("/fonts/Monoton/Monoton-Regular.ttf") format("truetype");
+}
+
 @import 'utilities';
 
 
 .cardContainer {
   @include cardPopper();
+  font-family: monospace;
   
-  background-color: rgb(255, 213, 0);
+}
+
+.cardh1{
+  // background-color: aqua;
+  font-family: HanaleiFill ;
 }

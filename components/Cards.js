@@ -29,14 +29,11 @@ export default function Card(props) {
         
           return (
             <div>
-              <h2>{"MadLib # " + `${e.index}`}</h2>
+              <h2 className={styles.cardh1}>{"MadLib # " + `${e.index}`}</h2>
               <p>{"This one has " + `${e.adlibs}` + " madLibs to add!"}</p>
               <p>{"They are" + " " + `${e.words}`}</p>
               {/* <Link  href={{pathname: "/MadLibs"}} >Home</Link> */}
               <button onClick={(() => setIt(e))}>Go</button>
-              
-              
-            
             </div>
           );
         })}

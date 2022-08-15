@@ -7,6 +7,8 @@ import { useState, useEffect } from "react";
 import { mad } from "../mad";
 
 
+
+
 import path from 'path'
 
 export default function Home() {
@@ -34,7 +36,11 @@ export default function Home() {
       <Head>
         <title>Holberton hacks AI</title>
         <meta name="description" content="Created by the holbies at holberton!" />
-        <link rel="icon" href="/favicon.ico" />
+      
+        <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Monofett&family=Ubuntu+Mono&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap" rel="stylesheet" />
+        
       </Head>
      <div>
       <Cards mad={mad} setMadLibs={setMadLibs} />
