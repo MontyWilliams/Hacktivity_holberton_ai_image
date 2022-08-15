@@ -1,25 +1,42 @@
 import react from "react";
-import { mad } from "../mad";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import styles from '../styles/card_styles.module.css';
 
-export default function Card() {
-  const [data, setData] = useState();
+
+export default function Card(props) {
+// console.log(props);
+  
   function setIt(e) {
-    setData()
-
+    props.setMadLibs(e)
   }
+
+   useEffect(() => {
+    console.log("setIt called")
+
+    return () => {
+      console.log("Cleaned up bro!")
+
+    };
+   }, []);
+  
+
+
   return (
     <div>
-      <div>
-        {mad.map(e => {
+      <div className={styles.cardContainer}>
+        {props.mad.map(e => {
+        
           return (
             <div>
               <h2>{"MadLib # " + `${e.index}`}</h2>
               <p>{"This one has " + `${e.adlibs}` + " madLibs to add!"}</p>
               <p>{"They are" + " " + `${e.words}`}</p>
               {/* <Link  href={{pathname: "/MadLibs"}} >Home</Link> */}
-              <button onClick={setIt(e)}>Go</button>
+              <button onClick={(() => setIt(e))}>Go</button>
+              
+              
+            
             </div>
           );
         })}

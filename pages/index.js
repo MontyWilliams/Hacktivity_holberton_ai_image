@@ -3,12 +3,32 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import Cards from '../components/Cards'
+import { useState, useEffect } from "react";
+import { mad } from "../mad";
+
 
 import path from 'path'
 
-export default function Home() { 
+export default function Home() {
+  const madLibsArray = useState(mad)
+
+  let [madLibs, setMadLibs] = useState("")
 
 
+  useEffect(() => {
+
+    mad.map(e => {
+      setMadLibs()
+      console.log("the madlibs array is set! This should only render on the intial pg Load!")
+  
+    })
+ 
+  }, [setMadLibs]);
+  
+  console.log(`current madlib: ${JSON.stringify(madLibs)}`);
+ 
+
+  // console.log(madSelection)
   return (
     <div className={styles.container}>
       <Head>
@@ -17,18 +37,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
      <div>
-      <Cards />
+      <Cards mad={mad} setMadLibs={setMadLibs} />
      </div>
     </div>
   )
 }
 
-// export const getStaticProps =  () => {
-//   const data = JSON.stringify(mad)
-  
-//   return {
-//     props: {
-//       madLibList: data
-//     }
-//   }
-// }
