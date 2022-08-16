@@ -5,7 +5,7 @@ import styles from '../styles/card_styles.module.css';
 
 
 export default function Card(props) {
-// console.log(props);
+ const mad = props.mad.res;
   
   function setIt(e) {
     props.setMadLibs(e)
@@ -20,23 +20,23 @@ export default function Card(props) {
     };
    }, []);
   
-
+  
 
   return (
     <div>
       <div className={styles.cardContainer}>
-        {props.mad.map(e => {
-        
-          return (
+        {mad.map((e) => {
+          return(
             <div>
-              <h2 className={styles.cardh1}>{"MadLib # " + `${e.index}`}</h2>
-              <p>{"This one has " + `${e.adlibs}` + " madLibs to add!"}</p>
-              <p>{"They are" + " " + `${e.words}`}</p>
-              {/* <Link  href={{pathname: "/MadLibs"}} >Home</Link> */}
-              <button onClick={(() => setIt(e))}>Go</button>
-            </div>
-          );
+            <h2 className={styles.cardh1}>{"MadLib # " + `${e.index}`}</h2>
+            <p>{"This one has " + `${e.adlibs}` + " madLibs to add!"}</p>
+            <p>{"They are" + " " + `${e.words}`}</p>
+            <Link  href="/MadLibs/[id]" as={`/MadLibs/${e.index}`}>Home</Link>
+            {/* <button onClick={(() => setIt(e))}>Go</button> */}
+          </div>
+          )
         })}
+     
       </div>
     </div>
   );

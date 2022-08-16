@@ -11,8 +11,11 @@ const withFonts = require('next-fonts');
 module.exports = withFonts({
   reactStrictMode: true,
   swcMinify: true,
-  enableSvg: true,
-  webpack(config, options) {
-    return config;
-  }
+  // enableSvg: true,
+//   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+//     config.node = {
+//         fs: 'empty',
+//     }
+//     return config
+// }
 });

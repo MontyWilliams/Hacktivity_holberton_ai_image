@@ -5,14 +5,10 @@ import Link from 'next/link'
 import Cards from '../components/Cards'
 import { useState, useEffect } from "react";
 import { mad } from "../mad";
-
-
-
-
 import path from 'path'
 
-export default function Home() {
-  const madLibsArray = useState(mad)
+export default function Home(props) {
+  const madLibsArray = useState(props.res)
 
   let [madLibs, setMadLibs] = useState("")
 
@@ -30,7 +26,7 @@ export default function Home() {
   console.log(`current madlib: ${JSON.stringify(madLibs)}`);
  
 
-  // console.log(madSelection)
+  console.log(madLibsArray)
   return (
     <div className={styles.container}>
       <Head>
@@ -43,9 +39,15 @@ export default function Home() {
         
       </Head>
      <div>
-      <Cards mad={mad} setMadLibs={setMadLibs} />
+      <Cards mad={props} setMadLibs={setMadLibs} />
      </div>
     </div>
   )
 }
 
+export async function getStaticProps() {
+  const res = mad;
+  return {
+    props: {res},
+  }
+}

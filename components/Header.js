@@ -10,7 +10,9 @@ const Header = () => {
         <Image className={styles.headerImg}  src={logo0} />
         <h1>Lets learn about the ai!</h1>
       </div>
-      <div className={styles.headerR}>talk about whats goin on here</div>
+      <div className={styles.headerR}>
+        <p>Dont Get MAD <br /> bro</p>
+      </div>
     </div>
   )
 }
