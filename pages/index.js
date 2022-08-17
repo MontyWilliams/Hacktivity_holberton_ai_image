@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import React from 'react'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
@@ -9,6 +10,7 @@ import path from 'path'
 
 export default function Home(props) {
   const madLibsArray = useState(props.res)
+  const MyContext = React.createContext();
 
   let [madLibs, setMadLibs] = useState("")
 
