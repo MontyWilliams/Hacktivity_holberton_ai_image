@@ -3,15 +3,12 @@ import Link from "next/link";
 const Mad = (props) => {
   const  it  = props.setMadLibs
   const {id, description, adlibs, words, wordsAnswer, madL} = props.madL
-
-  
-  
   function setIt(madL) {
     props.setMadLibs(madL)
     
   }
   
-  // console.log(props)
+  console.log(props)
   return (
     <div>
     <h2 >{"MadLib # " + `${id}`}</h2>
