@@ -4,6 +4,7 @@ import styles from '../styles/card_styles.module.css';
 import Mad from './Mad.js'
 import {MadContext} from './Context/MadContext';
 
+
 export default function Card() {
  const { mad, madLibs, setMadLibs } = useContext(MadContext);
 
@@ -24,9 +25,9 @@ export default function Card() {
       <div className={styles.cardContainer}>
         {mad.map((madL) => {
           return(
-            <MadContext.Provider value={{mad, madLibs, setMadLibs}}>
+            <div>
               <Mad madL={madL} setMadLibs={setMadLibs} />
-            </MadContext.Provider>
+            </div>
           )
         })}
      

@@ -7,23 +7,10 @@ import Cards from '../components/Cards'
 import { useState, useEffect, useContext } from "react";
 import { mad } from "../mad";
 import path from 'path'
-import { MadContext } from '../components/Context/MadContext'
+
 
 export default function Home(props) {
-  const madLibsArray = useState(props.res)
-  let [madLibs, setMadLibs] = useState("")
-  useEffect(() => {
-
-    mad.map(e => {
-      setMadLibs()
-      console.log("the madlibs array is set! This should only render on the intial pg Load!")
   
-    })
- 
-  }, [setMadLibs]);
-  
-  console.log(`current madlib: ${JSON.stringify(madLibs)}`);
-  console.log(madLibsArray)
   return (
     <div className={styles.container}>
       <Head>
@@ -36,17 +23,10 @@ export default function Home(props) {
         
       </Head>
      <div>
-      <MadContext.Provider value={{mad, madLibs, setMadLibs}}>
+      <div>
         <Cards />
-      </MadContext.Provider>
+      </div>
      </div>
     </div>
   )
-}
-
-export async function getStaticProps() {
-  const res = mad;
-  return {
-    props: {res},
-  }
 }
