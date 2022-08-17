@@ -1,6 +1,10 @@
 import Link from "next/link";
+import React, { useContext } from 'react';
+import {MadContext} from './Context/MadContext';
 
-const Mad = (props) => {
+
+const Mad = (props) => { 
+//  const { madLibs } = useContext(MadContext);
   const  it  = props.setMadLibs
   const {id, description, adlibs, words, wordsAnswer, madL} = props.madL
   function setIt(madL) {
@@ -8,7 +12,7 @@ const Mad = (props) => {
     
   }
   
-  console.log(props)
+  // console.log(props)
   return (
     <div>
     <h2 >{"MadLib # " + `${id}`}</h2>

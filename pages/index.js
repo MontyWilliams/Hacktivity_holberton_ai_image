@@ -4,17 +4,14 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import Cards from '../components/Cards'
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { mad } from "../mad";
 import path from 'path'
+import { MadContext } from '../components/Context/MadContext'
 
 export default function Home(props) {
   const madLibsArray = useState(props.res)
-  const MyContext = React.createContext();
-
   let [madLibs, setMadLibs] = useState("")
-
-
   useEffect(() => {
 
     mad.map(e => {
@@ -26,8 +23,6 @@ export default function Home(props) {
   }, [setMadLibs]);
   
   console.log(`current madlib: ${JSON.stringify(madLibs)}`);
- 
-
   console.log(madLibsArray)
   return (
     <div className={styles.container}>
@@ -41,7 +36,9 @@ export default function Home(props) {
         
       </Head>
      <div>
-      <Cards mad={props} setMadLibs={setMadLibs} />
+      <MadContext.Provider value={{mad, madLibs, setMadLibs}}>
+        <Cards />
+      </MadContext.Provider>
      </div>
     </div>
   )
