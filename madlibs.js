@@ -136,7 +136,7 @@ const madLibsArray =
 let madLibLibrary = new Map();
 madLibsArray.forEach((madLib, index) => {
   const LiBy = {
-      index: index,
+      id: index,
       description: `${madLib[0]}`,
       adlibs: `${madLib[1]}`  
   }
@@ -154,7 +154,7 @@ madLibsArray.forEach((madLib, index) => {
     let  holder2 = fullArray
     let arr = [];
   holder2.forEach((word) => {
-    // we have to ser 
+    // we have to sert the word in the inner scope of the function so the return can see it
     let key = word
     arr.push({
       [word] : ""
