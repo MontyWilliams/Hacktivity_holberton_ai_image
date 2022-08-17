@@ -151,13 +151,18 @@ madLibsArray.forEach((madLib, index) => {
   holder.forEach((adlib, index, fullArray) => {
     LiBy.words = fullArray
     // we add the empty valuse that will later hold user input
-    let holder2 = new Array(fullArray.length).fill('')
-    LiBy.wordsAnswer = holder2
-    // LiBy.wordsAnswer = []
-
-
-  
-
+    let  holder2 = fullArray
+    let arr = [];
+  holder2.forEach((word) => {
+    // we have to ser 
+    let key = word
+    arr.push({
+      [word] : ""
+    })
+  })
+    // let holder2 = new Array(fullArray.length).fill('')
+    LiBy.wordsAnswer = arr
+    
 
     })
   })
