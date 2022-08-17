@@ -1,18 +1,19 @@
 import { useRouter } from 'next/router'
-import React, { useContext } from 'react';
+import React, { useContext} from 'react';
 import { MadContext } from '../../../components/Context/MadContext';
 
 
 const madL = (props) => {
-  const { mad, madLibs, setMadLibs } = useContext(MadContext);
-
-  console.log(mad)
+  
+  const { madLibs } = useContext(MadContext)
+  // console.log(madLibs)
+ 
   const router = useRouter()
   const {id} = router.query;
   return (
     <div>
-      <p>Succesfully got The routes Working! this is rout: "{id}"</p>
-      <p>{madLibs}</p>
+      <p>Succesfully got The routes Working! this is route: "{id}"</p>
+      
     </div>
   )
 

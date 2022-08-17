@@ -7,22 +7,16 @@ import { MadContext } from '../components/Context/MadContext'
 import { mad } from "../mad";
 import { useState, useEffect, useContext } from "react";
 
-
-
-
-
-
 function MyApp({ Component, pageProps, props }) {
   const madLibsArray = useState(mad)
   let [madLibs, setMadLibs] = useState("")
   useEffect(() => {
-
     mad.map(e => {
-      setMadLibs()
+      setMadLibs(e)
       console.log("the madlibs array is set! This should only render on the intial pg Load!")
   
     })
- 
+
   }, [setMadLibs]);
   
   console.log(`current madlib: ${JSON.stringify(madLibs)}`);

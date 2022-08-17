@@ -1,26 +1,22 @@
 import Link from "next/link";
 import React, { useContext } from 'react';
-import {MadContext} from './Context/MadContext';
-
+import { MadContext } from './Context/MadContext.js'
 
 const Mad = (props) => { 
-//  const { madLibs } = useContext(MadContext);
-  const  it  = props.setMadLibs
-  const {id, description, adlibs, words, wordsAnswer, madL} = props.madL
+  const {madLibs, setMadLibs, madL} = useContext(MadContext);
+
   function setIt(madL) {
-    props.setMadLibs(madL)
-    
+    setMadLibs(madL)  
   }
   
-  // console.log(props)
   return (
     <div>
-    <h2 >{"MadLib # " + `${id}`}</h2>
-    <p>{"This one has " + `${adlibs}` + " madLibs to add!"}</p>
-    <p>{"They are" + " " + `${words}`}</p>
-    {/* <p>{"This is for the next page" + " " + `${JSON.stringify(wordsAnswer)}`}</p> */}
-    <Link  href="/Madlibs/[id.va]" as={`/Madlibs/${id}`}>Home</Link>
-    <button onClick={(() => setIt(props.madL))}>Go</button>
+    <h2 >{"MadLib # " + `${madL.id}`}</h2>
+    <p>{"This one has " + `${madL.adlibs}` + " madLibs to add!"}</p>
+    <p>{"They are" + " " + `${madL.words}`}</p>
+    {/* <p>{"This is for the next page" + " " + `${JSON.stringify(madL.wordsAnswer)}`}</p> */}
+    <Link  href="/Madlibs/[id.va]" as={`/Madlibs/${madL.id}`}   >Home</Link>
+    <button onClick={(() => setIt(madL))}>Go</button>
   </div>
   )
 
