@@ -148,10 +148,19 @@ madLibsArray.forEach((madLib, index) => {
   madLib.forEach((attribute, index, fullArray) => {
     // the spread operator is used with the set which takes the full array (set used to negate duplicates)
     let holder = [...new Set(fullArray) ]
-holder.forEach((adlib, index, fullArray) => {
+  holder.forEach((adlib, index, fullArray) => {
     LiBy.words = fullArray
+    // we add the empty valuse that will later hold user input
+    let holder2 = new Array(fullArray.length).fill('')
+    LiBy.wordsAnswer = holder2
+    // LiBy.wordsAnswer = []
+
+
+  
+
+
     })
   })
-  // console.log(LiBy);
+  console.log(LiBy);
 });
-export { mad }
+// export { mad }
