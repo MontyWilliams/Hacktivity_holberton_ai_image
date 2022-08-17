@@ -18,4 +18,4 @@ font-weight: bold;
  font-family: "GoldmanBold";
 }
 ```
- actually ended uo just importing it in the head tag
+needed to install loader in order for webpack to handle .tff files
