@@ -1,14 +1,18 @@
 import Link from "next/link";
-import React, { useContext } from 'react';
+import React, { useContext, useEffect} from 'react';
 import { MadContext } from './Context/MadContext.js'
 
 
 
 const Mad = (props) => { 
   const {madLibs, setMadLibs, madL} = useContext(MadContext);
-  function setIt(madL) {
-    setMadLibs(madL)  
-  }
+  
+  useEffect(() => {
+    function setIt(madL) {
+      setMadLibs(madL)
+    }
+   
+  }, );
 
   return (
     <div>
@@ -16,8 +20,12 @@ const Mad = (props) => {
     <p>{"This one has " + `${madL.adlibs}` + " madLibs to add!"}</p>
     <p>{"They are" + " " + `${madL.words}`}</p>
     {/* <p>{"This is for the next page" + " " + `${JSON.stringify(madL.wordsAnswer)}`}</p> */}
-    <Link  href="/Madlibs/[id]" as={`/Madlibs/${madL.id}`}   >Home</Link>
-    <button onClick={(() => setIt(madL))}>Go</button>
+    <button>
+    <Link  href="/Madlibs/[id]" as={`/Madlibs/${madL.id}`}>Go to MadLib</Link>
+    </button>
+    <br />
+    <br />
+    <button onClick={(() => setMadLibs(madL))}>Go</button>
   </div>
   )
 

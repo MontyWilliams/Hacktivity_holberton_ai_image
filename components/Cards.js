@@ -11,12 +11,12 @@ const useStore = create((set) => ({
 
 
 export default function Card() {
- const { mad, madLibs, setMadLibs } = useContext(MadContext);
+ const { mad} = useContext(MadContext);
 
 
-  function setIt(e) {
-    props.setMadLibs(e)
-  }
+//   function setIt(e) {
+//     setMadLibs(e)
+//   }
 
   useEffect(() => {
    console.log("setIt called")
@@ -30,7 +30,7 @@ export default function Card() {
       <div className={styles.cardContainer}>
         {mad.map((madL) => {
           return(
-            <MadContext.Provider value={{mad, madLibs, setMadLibs, madL}}>
+            <MadContext.Provider value={{mad, madL}}>
               <Mad  />
             </MadContext.Provider>
           )

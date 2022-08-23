@@ -4,9 +4,6 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Link from 'next/link'
 import Cards from '../components/Cards'
-import { useState, useEffect, useContext } from "react";
-import { mad } from "../mad";
-import path from 'path'
 
 
 export default function Home(props) {
