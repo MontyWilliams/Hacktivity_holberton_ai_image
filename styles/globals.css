@@ -22,3 +22,7 @@ a {
     background: black;
   }
 }
+
+.box {
+  border: 3px solid black
+}

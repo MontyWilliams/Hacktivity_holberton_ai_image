@@ -3,9 +3,14 @@ import { useState, useEffect, useContext } from "react";
 import styles from '../styles/card_styles.module.css';
 import Mad from './Mad.js'
 import {MadContext} from './Context/MadContext';
+import create from 'zustand';
+
+const useStore = create((set) => ({
+  
+}))
+
 
 export default function Card() {
-  // console.log(MyContext)
  const { mad, madLibs, setMadLibs } = useContext(MadContext);
 
 
@@ -26,7 +31,7 @@ export default function Card() {
         {mad.map((madL) => {
           return(
             <MadContext.Provider value={{mad, madLibs, setMadLibs, madL}}>
-              <Mad madL={madL} setMadLibs={setMadLibs} />
+              <Mad  />
             </MadContext.Provider>
           )
         })}
