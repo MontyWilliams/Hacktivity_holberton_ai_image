@@ -3,7 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { MadContext } from '../../../components/Context/MadContext';
 
 const madL = () => {
-   const {madLibs, setMadLibs, madL} = useContext(MadContext);
+   const {madLibs, setMadLibs} = useContext(MadContext);
 
   const [data, setData] = useState("")
   

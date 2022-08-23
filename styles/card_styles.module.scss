@@ -17,6 +17,12 @@
 .cardContainer {
   @include cardPopper();
   font-family: monospace;
+  display: inline-grid;
+  gap: 50px 50px ;  //row then column
+  grid-template-columns: auto auto auto auto;
+  border-radius: 15px;
+  
+
   
 }
 

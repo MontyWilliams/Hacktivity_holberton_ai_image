@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React, { useContext, useEffect} from 'react';
 import { MadContext } from './Context/MadContext.js'
+import styles  from '../styles/mad_styles.module.css'
 
 
 
@@ -15,7 +16,7 @@ const Mad = (props) => {
   }, );
 
   return (
-    <div>
+    <div className={styles.Hero}>
     <h2 >{"MadLib # " + `${madL.id}`}</h2>
     <p>{"This one has " + `${madL.adlibs}` + " madLibs to add!"}</p>
     <p>{"They are" + " " + `${madL.words}`}</p>
