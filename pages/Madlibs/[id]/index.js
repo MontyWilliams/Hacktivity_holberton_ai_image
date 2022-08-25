@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import React, { useContext, useEffect, useState } from 'react';
 import { MadContext } from '../../../components/Context/MadContext';
+import styles from '../../../styles/madIndex_styles.module.css';
 import create from 'zustand'
 
 const useStore = create((set) => ({
@@ -12,7 +13,7 @@ const useStore = create((set) => ({
   })),  
   setWordAnswers: () => ((set) => ({
     ...state,
-    pokemon,
+    
   }))  
 }))  
 
@@ -21,7 +22,10 @@ const FilterInput = () => {
   const filter = useStore((state) => state.filter);
   const setFilter = useStore((state) => state.setFilter);
   return (
-    <input value={filter} onChange={(evt) => setFilter(evt.target.value)}/>
+    <div>
+      <input name=""value={filter} onChange={(evt) => setFilter(evt.target.value)}/>
+      {filter}
+    </div> 
     )  
   }
 
@@ -29,12 +33,19 @@ const FilterInput = () => {
 
     for(const key in props) {
      let page = (Object.values(props))
-     return(<div>{page.map(e => {
+     return(<div className={styles.h1}>{page.map(e => {
       return(
-        <p key={e}>{e}</p>
+        <div>
+          <h1 className="box" key={e}>{e}
+          </h1>
+         
 
+        </div>
       )
-     })}</div>)
+    })}
+     
+    <FilterInput />
+     </div>)
     
   }
   }
@@ -49,12 +60,11 @@ const madL = () => {
   const {id} = router.query;
   return (
     <div >
-      <p>Succesfully got The routes Working! this is route: "{id}"</p>
+      {/* <p>Succesfully got The routes Working! this is route: "{id}"</p> */}
       <p>{madLibs.description}</p>
       {/* <button onClick={getIt} >yes</button> */}
-      <FilterInput />
-      <div className="box">
-      {filter}
+
+      <div >
       {getIt(word)}
       </div> 
     </div>

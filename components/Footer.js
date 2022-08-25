@@ -6,7 +6,7 @@ const Footer  = () => {
     <>
       <footer className={styles.footer}>
         <ul>
-          <li>Monty</li>
+          <li> <a href="https://twitter.com/63montywilliams">Monty</a></li>
           <li>Nicki</li>
           <li>blake</li>
           <li>forgot</li>
