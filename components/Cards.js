@@ -18,6 +18,8 @@ export default function Card() {
 //     setMadLibs(e)
 //   }
 
+
+
   useEffect(() => {
    console.log("setIt called")
    return () => {
@@ -27,7 +29,7 @@ export default function Card() {
   
   return (
     <div>
-      <div className={styles.cardContainer}>
+      <div className={styles.cardContainer} >
         {mad.map((madL) => {
           return(
             <MadContext.Provider value={{mad, madL, setMadLibs}}>

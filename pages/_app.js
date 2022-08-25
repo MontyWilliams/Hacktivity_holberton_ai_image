@@ -18,7 +18,7 @@ function MyApp({ Component, pageProps, props }) {
 
   }, [setMadLibs]);
   
-  console.log(`current madlib: ${JSON.stringify(madLibs)}`);
+  // console.log(`current madlib: ${JSON.stringify(madLibs)}`);
 
   return (
       <MadContext.Provider value={{mad, madLibs, setMadLibs}}>

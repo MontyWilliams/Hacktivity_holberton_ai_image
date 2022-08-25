@@ -155,15 +155,8 @@ madLibsArray.forEach((madLib, index) => {
     let arr = [];
   holder2.forEach((word) => {
     // we have to sert the word in the inner scope of the function so the return can see it
-    let key = word
-    arr.push({
-      [word] : ""
-    })
   })
-    // let holder2 = new Array(fullArray.length).fill('')
     LiBy.wordsAnswer = arr
-    
-
     })
   })
   console.log(LiBy);
