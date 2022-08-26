@@ -1,0 +1,24 @@
+@font-face {
+  font-family: "Monoton";   /*Can be any text*/
+  src: local("Monoton-Regular"),
+    url("/fonts/Monoton/Monoton-Regular.ttf") format("truetype");
+}
+
+.h1 {
+  font-family: Monoton;
+  font-size: 4rem
+
+}
+.madText {
+  font-family: monospace;
+  font-size: 4rem;
+  background-color: white;
+  border-radius: 10px;
+  text-transform: uppercase;
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
