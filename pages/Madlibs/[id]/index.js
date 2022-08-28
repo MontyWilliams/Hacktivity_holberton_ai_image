@@ -19,7 +19,7 @@ function getIt(props) {
                   <input
                     type="text"
                     name={key}
-                    style={{ width: "100px" }}
+                    style={{ width: "20rem" }}
                     onChange={handleChange}
                   />
                 </form>
@@ -36,35 +36,39 @@ function handleChange(event) {
   console.log(event);
 }
 
-
 const madL = () => {
   const { madLibs, setMadLibs } = useContext(MadContext);
   const word = madLibs.wordsAnswer;
   const router = useRouter();
   const { id } = router.query;
   const [data, setData] = useState({})
- 
-useEffect(() => {
-  let wordArr = new Set();
-  for(let key in word) {
-    wordArr.add({[word[key]]: ""})
-  }
-  setData(e => ({
-    ...Array.from(wordArr)
-  } ))
-}, );
+  const [isActive, setIsActive] = useState(true);
+  
+  
+  const handleClick = event => {
+    setIsActive(current => !current);
+    let wordArr = new Set();
+    for(let key in word) {
+      wordArr.add({[word[key]]: ""})
+    }
+    setData(e => ({
+      ...Array.from(wordArr)
+    } ))
+    console.log(data)
+  };
+
 
 console.log(data);
   return (
-    <div>
+    <div >
       <p>
         Succesfully got The routes Working! this is route: "{id}"
       </p>
       <p className={styles.madText}>
         {madLibs.description}
       </p>
-      {/* <button onClick={getIt} >yes</button> */}
-      <div>
+      <button  >yes</button>
+      <div className={isActive ? [styles.Hero] : ''} onClick={handleClick}>
         {getIt(word)}
       </div>
     </div>
