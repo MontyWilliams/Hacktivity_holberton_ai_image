@@ -46,7 +46,7 @@ const madL = () => {
   
   
   const handleClick = event => {
-    setIsActive(current => !current);
+    setIsActive(false);
     let wordArr = new Set();
     for(let key in word) {
       wordArr.add({[word[key]]: ""})
