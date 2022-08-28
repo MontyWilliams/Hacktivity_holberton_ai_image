@@ -5,8 +5,10 @@ import styles from "../../../styles/madIndex_styles.module.css";
 
 
 function getIt(props) {
-  for (const key in props) {
-    let page = Object.values(props);  
+  console.log(props);
+  const proper = props.word
+  for (const key in proper) {
+    let page = Object.values(proper);  
     return (
       <div className={styles.h1}>
         {page.map(e => {
@@ -32,8 +34,14 @@ function getIt(props) {
   }
 }
 
-function handleChange(event) {
-  console.log(event);
+function handleChange({event, setData=setData}) {
+  setData(prevData => {
+    return {
+      ...prevData,
+      [event.target.name]: event.target.value
+    }
+  })
+  
 }
 
 const madL = () => {
@@ -56,20 +64,22 @@ const madL = () => {
     } ))
     console.log(data)
   };
-
-
+  
+  
+  
 console.log(data);
   return (
-    <div >
-      <p>
-        Succesfully got The routes Working! this is route: "{id}"
+    <div className={styles.container}>
+      <p className={styles.text}>
+        Your Madlib is:
+        {/* Succesfully got The routes Working! this is route: "{id}" */}
       </p>
       <p className={styles.madText}>
         {madLibs.description}
       </p>
-      <button  >yes</button>
+      <h1 className={styles.glow}>Click the div to reveal</h1>
       <div className={isActive ? [styles.Hero] : ''} onClick={handleClick}>
-        {getIt(word)}
+        {getIt({word, setData})}
       </div>
     </div>
   );
