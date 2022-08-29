@@ -9,6 +9,7 @@ import { useState, useEffect, useContext } from "react";
 function MyApp({ Component, pageProps, props }) {
   const madLibsArray = useState(mad)
   let [madLibs, setMadLibs] = useState("")
+  const [data, setData] = useState({})
   useEffect(() => {
     mad.map(e => {
       setMadLibs(e)
@@ -21,7 +22,7 @@ function MyApp({ Component, pageProps, props }) {
   // console.log(`current madlib: ${JSON.stringify(madLibs)}`);
 
   return (
-      <MadContext.Provider value={{mad, madLibs, setMadLibs}}>
+      <MadContext.Provider value={{mad, madLibs, setMadLibs, data, setData}}>
          <Layout>
            <Component {...pageProps} />
          </Layout>
