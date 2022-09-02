@@ -29,7 +29,7 @@ const madL = () => {
                     <input
                       type="text"
                       name={e}
-                      style={{ width: "20rem" }}
+                      style={{ width: "20rem", height: "3rem", fontSize: "3rem" }}
                       onChange={handleChange}
                       value={page.e}
                     />
@@ -44,41 +44,47 @@ const madL = () => {
   }
   
   function handleChange(event) {
-    setData(prevData => ({
-      // const name = event.target.name
+
+    let wordPlay =[];
+     
+      setData(prevData => ({
         ...prevData,
         [event.target.name]: event.target.value
-      
-      
-    }))
-console.log(data);
-    
-  }
+      }));
 
+    }
+    
+    useEffect(() => {
+    
+    return () => {
+      console.log('wooooorrrrrddddddPPPPLLLLLAAAAYYYY')
+    };
+  }, [handleChange]);
   
   
   const handleClick = event => {      
     setIsActive(false);               // set the blur
-    let wordArr = new Set();          //This sets up the state for inputing text
-    for(let key in word) {
-      wordArr.add({[word[key]]: ""})
-    }
-    setData(e => ({
-      ...Array.from(wordArr)
-    } ))
+    // let wordArr = new Set();       
+    // for(let key in word) {
+    //     wordArr.add({[word[key]]: ""})
+    //   }
+    //   setData(e => ({
+    //       ...Array.from(wordArr)
+    // } ))
   };
-
+  
   useEffect(() => {
     setData(data);
     console.log("handler called");
     // return () => {
-    //   console.log('unmounting...');
-    // }
+      //   console.log('unmounting...');
+      // }
   }, [handleChange]);
   
   
   
-// console.log(data);
+  console.log(data)
+ 
   return (
     <div className={styles.container}>
       <p className={styles.text}>
