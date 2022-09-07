@@ -31,7 +31,7 @@ const Mad = (props) => {
     <p>{"This one has " + `${madL.adlibs}` + " madLibs to add!"}</p>
     <p>{"They are" + " " + `${madL.words}`}</p>
     {/* <p>{"This is for the next page" + " " + `${JSON.stringify(madL.wordsAnswer)}`}</p> */}
-    
+    {/* In order to set the madLib we return a function that sets it instead of changing it directly */}
     <button onClick={(() => setMadLibs(madL))}>
     <Link  href="/Madlibs/[id]" as={`/Madlibs/${madL.id}`}>Go to MadLib</Link>
     </button>

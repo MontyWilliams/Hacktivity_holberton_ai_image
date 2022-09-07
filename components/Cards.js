@@ -3,11 +3,6 @@ import { useState, useEffect, useContext } from "react";
 import styles from '../styles/card_styles.module.css';
 import Mad from './Mad.js'
 import {MadContext} from './Context/MadContext';
-import create from 'zustand';
-
-const useStore = create((set) => ({
-  
-}))
 
 
 export default function Card() {

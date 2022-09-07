@@ -2,8 +2,7 @@ import { useRouter } from "next/router";
 import React, { useContext, useEffect, useState } from "react";
 import { MadContext } from "../../../components/Context/MadContext";
 import styles from "../../../styles/madIndex_styles.module.css";
-
-
+import Link from 'next/link';
 
 
 const madL = () => {
@@ -44,23 +43,17 @@ const madL = () => {
   }
   
   function handleChange(event) {
-
-    let wordPlay =[];
-     
+    let wordPlay =[]; 
       setData(prevData => ({
         ...prevData,
         [event.target.name]: event.target.value
       }));
-
-    }
-    
-    useEffect(() => {
-    
+    }   
+    useEffect(() => {  
     return () => {
       console.log('wooooorrrrrddddddPPPPLLLLLAAAAYYYY')
     };
   }, [handleChange]);
-  
   
   const handleClick = event => {      
     setIsActive(false);               // set the blur
@@ -81,15 +74,21 @@ const madL = () => {
       // }
   }, [handleChange]);
   
-  
+  function updateMad(data) {
+    setMadLibs(e => ({
+      ...e,
+      wordsanswer: data
+
+    }))
+  }
   
   console.log(data)
+  console.log(madLibs)
  
   return (
     <div className={styles.container}>
       <p className={styles.text}>
         Your Madlib is:
-        {/* Succesfully got The routes Working! this is route: "{id}" */}
       </p>
       <p className={styles.madText}>
         {madLibs.description}
@@ -97,6 +96,9 @@ const madL = () => {
       <h1 className={styles.glow}>Click the div to reveal</h1>
       <div className={isActive ? [styles.Hero] : ''} onClick={handleClick}>
         {getIt({word})}
+        <button onClick={(() => updateMad(data))}>
+        <Link  href="/Images/[id]" as={`/Images/${madLibs.id}`}>Go to Ai Image</Link>
+        </button>
       </div>
     </div>
   );
